@@ -15,7 +15,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
   rm -rf /var/lib/apt/lists
 
 # setuptools sucks! install pip
-RUN easy_install pip && pip install 'trytond>=3.4,<3.5'
+RUN easy_install pip && pip install 'trytond>=3.8,<3.9'
 
 # Copy trytond.conf from local folder to /etc/trytond.conf
 ADD trytond.conf /etc/trytond.conf
