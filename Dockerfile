@@ -26,6 +26,6 @@ VOLUME /var/lib/trytond
 RUN echo jkUbZGvFNeugk > /.trytonpassfile
 ENV TRYTONPASSFILE /.trytonpassfile
 
-EXPOSE 8000
+EXPOSE 80
 CMD ["-c", "/etc/trytond.conf", "-v"]
 ENTRYPOINT ["/usr/local/bin/trytond"]
