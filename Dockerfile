@@ -1,8 +1,11 @@
-# Trytond 3.4
+# Trytond 3.8
 #
 
 FROM ubuntu:14.04
 MAINTAINER Santiago Saavedra <ssaavedra@gpul.org>
+
+# Create an empty folder for tryton data store
+VOLUME /var/lib/trytond
 
 # Setup environment and UTF-8 locale
 ENV LANGUAGE en_US.UTF-8
@@ -19,9 +22,6 @@ RUN easy_install pip && pip install 'trytond>=3.8,<3.9'
 
 # Copy trytond.conf from local folder to /etc/trytond.conf
 ADD trytond.conf /etc/trytond.conf
-
-# Create an empty folder for tryton data store
-VOLUME /var/lib/trytond
 
 RUN echo jkUbZGvFNeugk > /.trytonpassfile
 ENV TRYTONPASSFILE /.trytonpassfile
